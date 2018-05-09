@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Elms Adventure Trivia Night!</title>
+        
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width = device-width, height = device-height, initial-scale = 1, user-scalable = no">
+        
+         <!--bootstrap stuff-->
+        <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src ="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!--end bootstrap stuff-->
+        
+        
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+        
+        <link rel = "icon" href = "images/favicon.ico" type="image/x-icon">
+        <link rel = "stylesheet" href = "index.css">
+        <link href="https://fonts.googleapis.com/css?family=Heebo|Yantramanav" rel="stylesheet"> 
+        <script type = "text/javascript" src="script.js"></script>
+        <script type = "text/javascript" src="stages.js"></script>
+        <!--<link rel = "stylesheet" href = "http://nicolasgallagher.com/pure-css-speech-bubbles/demo/default.css">-->
+  
+    </head>
+    <body onload = "changeStage('')"><!--So the first stage displays-->
+        <div id = "mainContainer">
+            <img src = "images/correct.png" id = "correct" style = "visibility: hidden;">
+            <img src = "images/wrong.png" id = "wrong" style = "visibility: hidden;">
+            <div id = "blurTarget">
+                <img src = "images/elmsDesign.jpg" id = "backImage">
+                <div id = "questionTextBox">
+                </div>
+                <div id="centerBox">
+                    <input type="text" name="textfield" placeholder="Enter text here" id="inputTextBox" maxlength = "10">
+                </div>    
+                <button id="submitText" onclick="processInput()">Submit</button>
+                <button class = "answerButton" id = "ab1" onclick = "answer('ab1')"></button>
+                <button class = "answerButton" id = "ab2" onclick = "answer('ab2')"></button>
+                <button class = "answerButton" id = "ab3" onclick = "answer('ab3')"></button>
+                <button class = "answerButton" id = "ab4" onclick = "answer('ab4')"></button>
+                <button id = "startButton" onclick = "populateStageArray()">Start!</button>
+                <img src = "images/rightArrow.png" id = "advanceDisplayButton" onclick = "changeStage('forward')">
+                
+            </div>
+            
+            <img src = "images/bolt.png" id = "bolt">
+            <div id = "boltTalkBox">
+                
+            </div>
+            <img src = "images/rightArrow.png" id = "advanceButton" onclick = "changeStage('forward')">
+            
+            <input type="text" name="textfield" placeholder="Enter full name here" id="nameTextBox" maxlength = "75" >
+            
+            <select id = "majorSelect" required>
+                <option value = "Accounting">Accounting</option>
+                <option value = "Accelerated B.A./M.B.A.">B.A./M.B.A.</option>
+                <option value = "Biology">Biology</option>
+                <option value = "Chemistry">Chemistry</option>
+                <option value = "Communication Sciences and Disorders">Communication Sciences and Disorders</option>
+                <option value = "Computer Information Technology">Computer Information Technology</option>
+                <option value = "Criminal Justice">Criminal Justice</option>
+                <option value = "Early Childhood Education">Early Childhood Education</option>
+                <option value = "Education Studies">Education Studies</option>
+                <option value = "Entrepreneurship">Entrepreneurship</option>
+                <option value = "Elementary Education">Elementary Education</option>
+                <option value = "English as a Second Language">English as a Second Language</option>
+                <option value = "Moderate Special Needs">Moderate Special Needs</option>
+                <option value = "Secondary Education">Secondary Education</option>
+                <option value = "English">English</option>
+                <option value = "Graphic Design">Graphic Design</option>
+                <option value = "Healthcare Management">Healthcare Management</option>
+                <option value = "History">History</option>
+                <option value = "Management">Management</option>
+                <option value = "Marketing">Marketing</option>
+                <option value = "Mathematics">Mathematics</option>
+                <option value = "Nursing">Nursing</option>
+                <option value = "Pre-Health/Pre-Medicine">Pre-Health/Pre-Medicine</option>
+                <option value = "Pre-Physician Assistant">Pre-Physician Assistant</option>
+                <option value = "Psychology">Psychology</option>
+                <option value = "Religious Studies">Religious Studies</option>
+                <option value = "Social Media">Social Media</option>
+                <option value = "Social Work">Social Work</option>
+                <option value = "Sociology">Sociology</option>
+                <option value = "Speech-Language Pathology">Speech-Language Pathology</option>
+                <option value = "Sport Management">Sport Management</option>
+                <option value = "Undeclared">Undeclared</option>
+            </select>
+            
+            <select id = "genderSelect" required>
+                <option value = "Female">Female</option>
+                <option value = "Male">Male</option>
+                <option value = "Other">Other</option>
+            </select>
+            
+            <select id = "yogSelect" required>
+                <option value = "2018">2018</option>
+                <option value = "2019">2019</option>
+                <option value = "2020">2020</option>
+                <option value = "2021">2021</option>
+            </select>
+            
+            <button id = "submitInfoButton" onclick = "initPlayer()">Submit!</button>
+            
+            <div id = "endInfo">
+                Test
+            </div>
+           
+        </div>
+    </body>
+</html>

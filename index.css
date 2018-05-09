@@ -1,0 +1,361 @@
+/*
+ background: #E9E4dE off-white
+      text?: #000000 black?
+  highlight: #016938 elms green
+highlight 2: #F5B123 elms gold
+highlight 3: #B49555 border brown
+      other: #BD9254 button brown
+      other: #977A52 door brown 
+      other: #003A79 berchman's blue
+      other: #FEFEFF berchman's white
+      other: #FFFFFF logo white
+*/
+
+body
+{
+    font-family: 'Yantramanav', sans-serif;
+    background-color: #016938;
+    width: 100%;
+    height: 100%;
+    font-size: 200%;
+    overflow: hidden;
+}
+    #mainContainer
+    {
+        height: 100%; 
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        
+        overflow: hidden;
+    }
+
+        #backImage
+        {
+            width: 100%;
+            height: 100vh;
+        }
+
+        #questionTextBox
+        {
+            position: absolute;
+            border-radius: 10px;
+            border: solid #F5B123 1px;
+            top: 12%;
+            width: 80%;
+            height: 30%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background-color: #FEFEFF;
+            padding-left: 3.5%;
+            padding-right:3.5%;
+            padding-top: 3.5%;
+            padding-bottom:3.5%;
+            color: black;
+            overflow: hidden;
+            font-family: 'Heebo', sans-serif;
+            visibility: hidden;
+        }
+
+        #advanceButton
+        {
+            position: absolute;
+            left: 65%;
+            top: 70%;
+            width: 25%;
+            visibility: hidden;
+        }
+
+        #advanceDisplayButton
+        {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 55%;
+            width: 30%;
+            visibility: hidden;
+        }
+
+        #inputTextBox
+        {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 48%;
+            height: 5%;
+            width: 80%;
+            /*font-size: 3.5%;*/
+            
+            border: 1px #F5B123 solid;
+            border-radius: 5px;
+            padding: 5%;
+            visibility: hidden;
+        }
+
+        #submitText
+        {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 65%; 
+            width: 60%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+            border-radius: 10px;
+            border-color: #F5B123 transparent;
+            background-color: #F5B123;
+            visibility: hidden;
+        }
+
+        .answerButton
+        {
+            position: absolute;
+            width: 80%;
+            height: 6%;
+            padding 10px;
+            left: 10%;
+            border-radius: 10px;
+            font-family: 'Yantramanav', sans-serif;
+            visibility: hidden;
+        }
+        
+            .answerButton:active
+            {
+                border: none;
+                outline: none;
+                outline-style: none;
+                background-color: aqua;
+            }
+            .answerButton:focus
+            {
+                border: none;
+                outline: none;
+                outline-style: none;
+                background-color: aqua;
+                /*https://stackoverflow.com/questions/42134731/css-change-button-style-after-click*/
+            }
+            #ab1
+            {
+                top: 48%;
+                background-color: #B49555;
+                box-shadow: 0 3px #999;
+                outline: none;
+                border: none;
+            }
+            #ab1:active
+            {
+                background-color: #89713F;
+                box-shadow: 0 0px #666;   
+                transform: translateY(4px);
+                border: none
+            }
+            #ab2
+            {
+                top: 57%;
+                background-color: #016938;
+                color: #FFFFFF;
+                box-shadow: 0 3px #999;
+                outline: none;
+                border: none;
+            }
+            #ab2:active
+            {
+                background-color: #005B30;
+                box-shadow: 0 0px #666;   
+                transform: translateY(4px);
+                
+            }
+            #ab3
+            {
+                top: 66%;
+                background-color: #B49555;
+                box-shadow: 0 3px #999;
+                outline: none;
+                border: none;
+            }
+            #ab3:active
+            {
+                background-color: #89713F;
+                box-shadow: 0 0px #666;   
+                transform: translateY(4px);
+                
+            }
+            #ab4
+            {
+                top: 75%;
+                background-color: #016938;
+                color: #FFFFFF;
+                box-shadow: 0 3px #999;
+                outline: none;
+                border: none;
+            }
+            #ab4:active
+            {
+                background-color: #005B30;
+                box-shadow: 0 0px #666;   
+                transform: translateY(4px);
+                
+            }
+        #bolt
+        {
+            width: 50%;
+            position: absolute;
+            bottom: -2.5%;
+            z-index: 2;
+            visibility: hidden;
+        }
+        #boltTalkBox
+        {
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border: 5px solid #F5B123;
+            width: 80%;
+            height: 30%;
+            background-color: #FEFEFF;
+            top: 25%;
+            padding: 15px;
+            border-radius: 20px;
+            overflow: hidden;
+            visibility: hidden;
+        }
+        #boltTalkBox:after 
+        {
+            content: "";
+            position: absolute;
+            bottom: -28px; /* value = - border-top-width - border-bottom-width */
+            left: 50px; /* controls horizontal position */
+            border-width: 24px 19px 0; /* vary these values to change the angle of the vertex */
+            border-style: solid;
+            border-color: #F5B123 transparent;
+              /* reduce the damage in FF3.0 */
+            display: block;
+            width: 0; 
+            /*thanks to 
+            http://nicolasgallagher.com/pure-css-speech-bubbles/*/
+        }
+        #startButton
+        {
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 80%;
+            top: 50%;
+            height: 6%;
+            background-image: "images/Lightning-Green";
+            visibility: hidden;
+        }
+        #nameTextBox
+        {
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 80%;
+            top: 15%;
+            height: 5%;
+            visibility: hidden;
+            border-color: #F5B123 transparent;
+        }
+        #genderSelect
+        {
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 80%;
+            height: 5%;
+            top: 28%;
+            visibility: hidden;
+            border-color: #F5B123 transparent;
+        }
+        #majorSelect
+        {
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 80%;
+            height: 5%;
+            top: 40%;
+            visibility: hidden;
+            border-color: #F5B123 transparent;
+        }
+        #yogSelect
+        {   
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 80%;
+            top: 52%;
+            height: 5%;
+            visibility: hidden;
+            border-color: #F5B123 transparent;
+        }
+        #submitInfoButton
+        {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 60%;
+            top: 70%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+            border-radius: 10px;
+            border-color: #F5B123 transparent;
+            background-color: #F5B123;
+            visibility: hidden;
+        }
+        
+        #wrong
+        {
+            position: absolute; 
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            transition-duration: 2s;
+        }
+        #correct
+        {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            transition-duration: 2s;
+        }
+        #endInfo
+        {
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 80%;
+            top: 50%;
+            height: 5%;
+            font-size: 100%;
+            visibility: hidden;
+            border-color: #F5B123 transparent;
+        }
+@media only screen and (min-width: 500px)
+{
+    #mainContainer
+    {
+        width: 35%;
+    }
+}
